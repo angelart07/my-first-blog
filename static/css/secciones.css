@@ -1,0 +1,28 @@
+/* Secciones del sitio */
+
+.home {
+    background: #FFFFFF url('../img/1.jpg') no-repeat center center fixed;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    text-align: center;
+    color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.full-height {
+    height: 100%;
+    padding: 15% 0;
+}
+
+.single {
+    margin: 130px 0;
+}
+
+.info {
+    background-color: #eaeff5;
+    color: #888d9b;
+    padding: 20px;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}

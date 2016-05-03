@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/tables.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
+    <section class="home full-height">
+
+            <div class="container">
+                <nav class="dropdownmenu">
+                    <ul>
+                        <li><a href="{% url 'alumnos:create_alumnos' %}">Nuevo Alumno</a></li>
+                    </ul>  
+                    <ul>
+                        <li><a href="#">Registro Masivo</a></li>
+                    </ul>   
+                </nav>
+                <h2>Lista de Alumnos</h2>
+                <table class="width200">
+                    <tbody>
+                      <tr>
+                        <th>N°</th>
+                        <th>GRADO</th>
+                        <th>ESPECIALIDAD</th>
+                        <th>NOMBRES</th>
+                        <th>APELLIDOS</th>
+                        <th>CIP</th>
+                        <th>DNI</th>
+                        <th>DEPENDENCIA</th>
+                        <th>CURSO</th>
+                      </tr>
+                    {% for alumno in object_list  %}
+                        <tr>
+                            <td>{{alumno.id}}</td>
+                            <td>{{alumno.grado}}</td>
+                            <td>{{alumno.especialidad}}</td>
+                            <td>{{alumno.nombres}}</td>
+                            <td>{{alumno.apellidos}}</td>
+                            <td>{{alumno.cip}}</td>  
+                            <td>{{alumno.dni}}</td>
+                            <td>{{alumno.dependencia}}</td>
+                            <td>{{alumno.curso}}</td>
+                        </tr>
+                    {% endfor %}
+                      </tbody>
+                </table>
+            </div>
+        </section>
+{% endblock content %}

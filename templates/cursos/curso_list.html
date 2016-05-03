@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/tables.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
+    <section class="home full-height">
+
+            <div id="main" class="container">
+                <nav class="dropdownmenu">
+                    <ul>
+                        <li><a href="{% url 'cursos:create_cursos' %}">Nuevo Curso</a></li>
+                    </ul>  
+                    <ul>
+                        <li><a href="#">Registro Masivo</a></li>
+                    </ul>   
+                </nav>
+                <h2>Lista de Cursos</h2>
+                <table class="width200">
+                    <tbody>
+                      <tr>
+                        <th>N°</th>
+                        <th>CURSO</th>
+                        <th>CÓDIGO</th>
+                        <th>DOCENTE</th>
+                        <th>VACANTES</th>
+                        <th>FECHA DE INICIO</th>
+                        <th>FECHA DE TERMINO</th>
+                      </tr>
+                    {% for curso in object_list  %}
+                        <tr>
+                            <td>{{curso.id}}</td>
+                            <td>{{curso.curso}}</td>
+                            <td>{{curso.codigo}}</td>
+                            <td>{{curso.docente}}</td>
+                            <td>{{curso.vacantes}}</td>
+                            <td>{{curso.fecha_de_inicio}}</td>
+                            <td>{{curso.fecha_de_termino}}</td>
+                        </tr>
+                    {% endfor %}
+                      </tbody>
+                </table>
+            </div>
+        </section>
+{% endblock content %}

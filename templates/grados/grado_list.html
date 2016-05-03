@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/tables.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
+    <section class="home full-height">
+
+            <div class="container">
+                <nav class="dropdownmenu">
+                    <ul>
+                        <li><a href="{% url 'grados:create_grados' %}">Nuevo Grado</a></li>
+                    </ul>  
+                    <ul>
+                        <li><a href="#">Registro Masivo</a></li>
+                    </ul>   
+                </nav>
+                <h2>Lista de Grados</h2>
+                <table class="width200">
+                    <tbody>
+                      <tr>
+                        <th>N°</th>
+                        <th>GRADO</th>
+                        <th>DESCRIPCIÓN</th>
+                      </tr>
+                    {% for grado in object_list  %}
+                        <tr>
+                            <td>{{grado.id}}</td>
+                            <td>{{grado.grado}}</td>
+                            <td>{{grado.descripcion}}</td>
+                        </tr>
+                    {% endfor %}
+                      </tbody>
+                </table>
+            </div>
+        </section>
+{% endblock content %}

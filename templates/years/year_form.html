@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/formularios.css' %}">
+	
+	<section class="home full-height">
+
+        <div class="contenedor">
+            <div class="row left">
+                <h1 class="col-10 title">Registro de Años</h1>
+                <div id="form-main">
+  					<div id="form-div">      
+						<form class="form" action="" method="POST">
+							{% csrf_token %}
+					      	{% load widget_tweaks %}						 
+							<div class="caja">
+								<div class="error">
+									{{form.year.errors}}
+								</div>
+								<div class="input">
+									<p class="name">
+								    	{% render_field form.year|add_class:"validate[required,custom[onlyLetter],length[0,100]] feedback-input" name="year" id="name" placeholder="Año" %}
+								    </p>
+							    </div>
+							</div>
+						  	<div class="clear"></div>
+							<div class="submit">
+						    	<input type="submit" value="Registrar" id="button-blue"/>
+						    	<div class="ease"></div>
+						  	</div>
+						</form>
+	            	</div>
+	        	</div>
+	    	</div>
+	    </div>
+    </section>
+{% endblock content %}

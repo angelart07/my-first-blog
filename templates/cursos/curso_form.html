@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/formularios.css' %}">
+	
+	<section class="home full-height">
+
+        <div class="contenedor">
+            <div class="row left">
+                <h1 class="col-10 title">Registro de Cursos</h1>
+                <div id="form-main">
+  					<div id="form-div">      
+						<form class="form" action="" method="POST">
+							{% csrf_token %}
+					      	{% load widget_tweaks %}						 
+							<div class="caja">
+								<div class="error">
+									{{form.curso.errors}}
+								</div>
+								<div class="input">
+									<p class="name">
+								    	{% render_field form.curso|add_class:"validate[required,custom[onlyLetter],length[0,100]] feedback-input" name="curso" id="name" placeholder="Nombre del curso..." %}
+								    </p>
+							    </div>
+							</div>
+
+							<div class="caja">
+								<div class="error">
+									{{form.codigo.errors}}
+								</div>
+								<div class="input">
+								    <p class="apellidos">
+								  		{% render_field form.codigo|add_class:"validate[required,custom[onlyLetter],length[0,100]] feedback-input" name="codigo" id="name" placeholder="Código del curso..." %}
+								  	</p>
+							    </div>
+							</div>
+
+							<div class="caja">
+								<div class="error">
+									{{form.docente.errors}}
+								</div>
+								<div class="input">
+								    <p class="apellidos">
+								  		{% render_field form.docente|add_class:"validate[required,custom[onlyLetter],length[0,100]] feedback-input" name="docente" id="name" placeholder="Docente..." %}
+								  	</p>
+							    </div>
+							</div>
+
+							<div class="caja">
+								<div class="error">
+									{{form.vacantes.errors}}
+								</div>
+								<div class="input">
+								    <p class="apellidos">
+								  		{% render_field form.vacantes|add_class:"validate[required,custom[onlyLetter],length[0,1]] feedback-input" name="vacantes" id="name" placeholder="Vacantes..." %}
+								  	</p>
+							    </div>
+							</div>
+
+							<div class="caja">
+								<div class="error">
+									{{form.fecha_de_inicio.errors}}
+								</div>
+								<div class="input">
+								    <p class="apellidos">
+								  		{% render_field form.fecha_de_inicio|add_class:"validate[required,custom[onlyLetter],length[0,100]] feedback-input" name="fecha_de_inicio" id="calendar" placeholder="Fecha de inicio..." %}
+								  	</p>
+							    </div>
+							</div>
+
+							<div class="caja">
+								<div class="error">
+									{{form.fecha_de_termino.errors}}
+								</div>
+								<div class="input">
+								    <p class="apellidos">
+								  		{% render_field form.fecha_de_termino|add_class:"validate[required,custom[onlyLetter],length[0,100]] feedback-input" name="fecha_de_termino" id="calendar" placeholder="Fecha de término..." %}
+								  	</p>
+							    </div>
+							</div>
+						  	<div class="clear"></div>
+							<div class="submit">
+						    	<input type="submit" value="Registrar" id="button-blue"/>
+						    	<div class="ease"></div>
+						  	</div>
+						</form>
+	            	</div>
+	        	</div>
+	    	</div>
+	    </div>
+    </section>
+{% endblock content %}

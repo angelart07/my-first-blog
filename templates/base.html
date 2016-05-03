@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			Oficina Académica
+		</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	</head>
+{% endblock head %}
+<body>
+	<header>
+		<div class="header">
+			<h1 class="col-4">
+				<a href="/">PROENTRENAV</a>
+			</h1>
+			<nav id="nav" class="col-10 row end">
+				<div class="col-3 end">
+					<ul class="row between">
+						<li class="col">
+							<a href="/docentes/">Docentes</a>
+						</li>
+						<li class="col">
+							<a href="/alumnos/">Alumnos</a>
+						</li>
+						<li class="col">
+							<a href="/cursos/">Cursos</a>
+						</li>
+						<!--
+						<li class="col">
+							<a href="/dependencias/">Dependencias</a>
+						</li>
+						<li class="col">
+							<a href="/especialidades/">Especialidades</a>
+						</li>
+						<li class="col">
+							<a href="/grados/">Grados</a>
+						</li>
+						<li class="col">
+							<a href="/years/">Años</a>
+						</li>
+						-->
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header>
+	{% block content %}
+		
+	{% endblock content %}
+	<footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        2016 - Oficina Académica (Desarrollado por <a href="http://twitter.com/angelart07" target="_blank" class="layout_a">Angel Arteaga</a>)
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

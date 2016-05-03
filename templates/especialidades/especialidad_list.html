@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/tables.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
+    <section class="home full-height">
+
+            <div class="container">
+                <nav class="dropdownmenu">
+                    <ul>
+                        <li><a href="{% url 'especialidades:create_especialidades' %}">Nueva especialidad</a></li>
+                    </ul>  
+                    <ul>
+                        <li><a href="#">Registro Masivo</a></li>
+                    </ul>   
+                </nav>
+                <h2>Lista de especialidad</h2>
+                <table class="width200">
+                    <tbody>
+                      <tr>
+                        <th>N°</th>
+                        <th>ESPECIALIDAD</th>
+                        <th>DESCRIPCIÓN</th>
+                      </tr>
+                    {% for especialidad in object_list  %}
+                        <tr>
+                            <td>{{especialidad.id}}</td>
+                            <td>{{especialidad.nombre}}</td>
+                            <td>{{especialidad.descripcion}}</td>
+                        </tr>
+                    {% endfor %}
+                      </tbody>
+                </table>
+            </div>
+        </section>
+{% endblock content %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/tables.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
+    <section class="home full-height">
+
+            <div id="main" class="container">
+                <nav class="dropdownmenu">
+                    <ul>
+                        <li><a href="{% url 'docentes:create_docentes' %}">Nuevo Docente</a></li>
+                    </ul>  
+                    <ul>
+                        <li><a href="#">Registro Masivo</a></li>
+                    </ul>   
+                </nav>
+                <h2>Lista de Docentes</h2>
+                <table id="table-docente" class="width200">
+                    <tbody>
+                      <tr>
+                        <th>N°</th>
+                        <th>GRADO</th>
+                        <th>ESPECIALIDAD</th>
+                        <th>NOMBRES</th>
+                        <th>APELLIDOS</th>
+                        <th>CIP</th>
+                        <th>DNI</th>
+                        <th>DEPENDENCIA</th>
+                        <th>CURSO</th>
+                      </tr>
+                    {% for docente in object_list  %}
+                        <tr>
+                            <td>{{docente.id}}</td>
+                            <td>{{docente.grado}}</td>
+                            <td>{{docente.especialidad}}</td>
+                            <td>{{docente.nombres}}</td>
+                            <td>{{docente.apellidos}}</td>
+                            <td>{{docente.cip}}</td>  
+                            <td>{{docente.dni}}</td>
+                            <td>{{docente.dependencia}}</td>
+                            <td>{{docente.curso}}</td>
+                        </tr>
+                    {% endfor %}
+                      </tbody>
+                </table>
+            </div>
+        </section>
+{% endblock content %}

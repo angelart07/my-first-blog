@@ -1,0 +1,30 @@
+@import url('reset.css');
+@import url('reticula.css');
+@import url('editorial.css');
+@import url('secciones.css');
+@import url('formas.css');
+@import url('layout.css');
+
+html, body {
+    color: #282828;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+  	overflow-y: hidden;
+}
+
+#welcome{
+    font-size: 350%;
+    background-color: rgba(72,72,72,0.4);
+    border-radius: 5px;
+}
+
+#nav{
+	padding: 10px 0;
+	color: red;
+}
+
+#main{
+    margin-top: -100px;
+}
+

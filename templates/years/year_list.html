@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/tables.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
+    <section class="home full-height">
+
+            <div class="container">
+                <nav class="dropdownmenu">
+                    <ul>
+                        <li><a href="{% url 'years:create_years' %}">Nuevo Año</a></li>
+                    </ul>  
+                    <ul>
+                        <li><a href="#">Registro Masivo</a></li>
+                    </ul>   
+                </nav>
+                <h2>Lista de Años</h2>
+                <table class="width200">
+                    <tbody>
+                      <tr>
+                        <th>N°</th>
+                        <th>AÑO</th>
+                      </tr>
+                    {% for year in object_list  %}
+                        <tr>
+                            <td>{{year.id}}</td>
+                            <td>{{year.year}}</td>
+                        </tr>
+                    {% endfor %}
+                      </tbody>
+                </table>
+            </div>
+        </section>
+{% endblock content %}
